@@ -16,6 +16,11 @@ class NavBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      decoration: BoxDecoration(
+        border: Border(
+          bottom: BorderSide(color: Theme.of(context).dividerColor, width: 1),
+        ),
+      ),
       child: Row(
         children: [
           IconButton(
