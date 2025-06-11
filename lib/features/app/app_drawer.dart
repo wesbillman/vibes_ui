@@ -25,8 +25,11 @@ class AppDrawer extends ConsumerWidget {
                 Spacer(),
                 Switch(
                   value: isDarkMode,
-                  onChanged: (value) =>
-                      ref.read(darkModeProvider.notifier).state = value,
+                  onChanged: (value) async {
+                    await ref
+                        .read(darkModeProvider.notifier)
+                        .setDarkMode(value);
+                  },
                 ),
               ],
             ),

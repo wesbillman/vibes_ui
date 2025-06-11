@@ -7,6 +7,7 @@ import 'package:vibes_ui/features/app/app_providers.dart';
 import 'package:vibes_ui/shared/theme/theme.dart';
 import 'package:vibes_ui/shared/widgets/nav_bar.dart';
 import 'package:vibes_ui/features/projects/projects_sidebar.dart';
+import 'package:vibes_ui/features/functions/function_page.dart';
 
 class App extends HookConsumerWidget {
   const App({super.key});
@@ -33,8 +34,9 @@ class App extends HookConsumerWidget {
                 String? selectedDirectory = await FilePicker.platform
                     .getDirectoryPath();
                 if (selectedDirectory != null) {
-                  ref.read(projectPathProvider.notifier).state =
-                      selectedDirectory;
+                  await ref
+                      .read(projectPathProvider.notifier)
+                      .setPath(selectedDirectory);
                 }
               },
               onSettingsPressed: () => scaffoldKey.currentState?.openDrawer(),
@@ -89,12 +91,7 @@ class _ResizableSidebarLayout extends HookWidget {
             ),
           ),
         ),
-        Expanded(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [const Center(child: Text('Vibes'))],
-          ),
-        ),
+        const Expanded(child: FunctionPage()),
       ],
     );
   }

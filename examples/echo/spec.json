@@ -1,0 +1,64 @@
+{
+  "name": "echo",
+  "description": "A module for generating greeting messages with timestamps",
+  "version": "1.0.0",
+  "config": {
+    "time_format": "HH:mm:ss"
+  },
+  "functions": [
+    {
+      "name": "echo",
+      "signature": "function echo(name: string): string",
+      "description": "Generates a greeting message with the current time",
+      "definition": "Define a function that takes a \"name\" string as input and returns a string in the form \"Hello, ${name}, it is ${time}\"."
+    },
+    {
+      "name": "echo2",
+      "signature": "function echo2(name: string): string",
+      "description": "Generates a greeting message with the current time",
+      "definition": "Define a function that takes a \"name\" string as input and returns a string in the form \"Hello, ${name}, it is ${time}\"."
+    },
+    {
+      "name": "echo3",
+      "signature": "function echo2(name: string): string",
+      "description": "Generates a greeting message with the current time",
+      "definition": "Define a function that takes a \"name\" string as input and returns a string in the form \"Hello, ${name}, it is ${time}\"."
+    },
+    {
+      "name": "formatTime",
+      "signature": "function formatTime(format: string): string",
+      "description": "Formats the current time according to the specified format string",
+      "definition": "Define a function that takes a format string (e.g., \"HH:mm\", \"hh:mm a\") and returns the current time formatted accordingly."
+    }
+  ],
+  "test_suites": [
+    {
+      "name": "echo_function",
+      "description": "Tests for the echo function",
+      "tests": [
+        {
+          "name": "basic_greeting",
+          "definition": "Verify that with input \"Bob\" we get the output \"Hello, Bob, it is 12:34:56\"."
+        },
+        {
+          "name": "empty_name",
+          "definition": "Verify that with input \"\" we get the output \"Hello, , it is 12:34:56\"."
+        }
+      ]
+    },
+    {
+      "name": "formatTime_function",
+      "description": "Tests for the formatTime function",
+      "tests": [
+        {
+          "name": "24_hour_format",
+          "definition": "Verify that with input \"HH:mm\" we get the output \"14:30\"."
+        },
+        {
+          "name": "12_hour_format",
+          "definition": "Verify that with input \"hh:mm a\" we get the output \"02:30 PM\"."
+        }
+      ]
+    }
+  ]
+}

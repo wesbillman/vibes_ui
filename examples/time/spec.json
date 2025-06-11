@@ -1,0 +1,29 @@
+{
+    "name": "time",
+    "description": "A module for generating time messages with timestamps",
+    "version": "1.0.0",
+    "config": {
+      "time_format": "HH:mm:ss"
+    },
+    "functions": [
+      {
+        "name": "time",
+        "signature": "function time(): string",
+        "description": "Generates a time message with the current time",
+        "definition": "Define a function that returns a string in the form \"It is ${time}\"."
+      }
+    ],
+    "test_suites": [
+      {
+        "name": "time_function",
+        "description": "Tests for the time function",
+        "tests": [
+          {
+            "name": "basic_time",
+            "definition": "Verify that with input \"Bob\" we get the output \"It is 12:34:56\"."
+          }
+        ]
+      }
+    ]
+  }
+  

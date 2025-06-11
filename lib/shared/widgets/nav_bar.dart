@@ -29,7 +29,10 @@ class NavBar extends StatelessWidget {
             tooltip: 'Settings',
           ),
           const Spacer(),
-          TextButton(onPressed: onPathPressed, child: Text(path)),
+          TextButton(
+            onPressed: onPathPressed,
+            child: Text(path.isEmpty ? 'Select project...' : path),
+          ),
         ],
       ),
     );
